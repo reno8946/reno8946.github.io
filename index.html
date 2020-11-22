@@ -1,3 +1,74 @@
-<html>
-<h1>Welcome to my website!</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Belly Button Biodiversity</title>
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  />
+</head>
+
+<body style="background-color: lightgreen;">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Belly Button Biodiversity Dashboard</h1>
+        <p>Use the interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p><h4>This is the belly button biodiversity dashboard page. The dashboard shows a
+          panel for demographic information as well visualisations to convey bacteria
+          information and washing frequency. The dataset contains data of 153 test
+          subjects. Please select a test subject ID number to view the results.</h4><br></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well" style="background-color:lightyellow;">
+          <h5>Test Subject ID No.:</h5>
+          <!-- <select id="selDataset"></select> -->
+          <select
+            id="selDataset" onchange="optionChanged(this.value)"
+            style="background-color:lightblue;"
+            >
+          </select>
+        </div>
+        <div class="panel panel-primary" style="background-color:lightyellow;">
+          <div class="panel-heading" style="background-color:rgba(7, 68, 124, 0.897)">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id="bar"></div>
+        <p>This bar chart shows the top 10 bacteria cultures found on this test subject.</p>
+      </div>
+      <div class="col-md-5">
+        <div id="gauge"></div>
+        <p>This gauge shows the washing frequency of the test subject's belly button.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12"><br>
+        <div id="bubble"></div>
+        <p class="text-center">This bubble chart shows the bacteria cultures found per
+          sample on this test subject.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="charts.js"></script>
+
+</body>
+
 </html>
